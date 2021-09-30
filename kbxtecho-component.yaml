@@ -4,7 +4,8 @@ metadata:
   name: kbxtecho
   description: Kbxt Echo Service
   annotations:
-    backstage.io/kubernetes-id: kbxtecho
+    'backstage.io/kubernetes-label-selector': 'app=kbxtecho'
+#     backstage.io/kubernetes-id: kbxtecho
   tags:
     - netcore
 spec:
