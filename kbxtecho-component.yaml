@@ -14,6 +14,9 @@ spec:
   system: platform
   providesApis:
     - kbxtecho
+  consumesApis:
+    - kbxtechogrpc-files
+    - kbxtechogrpc-echo
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -41,6 +44,9 @@ spec:
   lifecycle: production
   owner: team-a
   system: platform
+  providesApis:
+    - kbxtechogrpc-files
+    - kbxtechogrpc-echo
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
