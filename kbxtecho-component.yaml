@@ -3,6 +3,8 @@ kind: Component
 metadata:
   name: kbxtecho
   description: Kbxt Echo Service
+  annotations:
+    backstage.io/kubernetes-id: kbxtecho
   tags:
     - netcore
 spec:
