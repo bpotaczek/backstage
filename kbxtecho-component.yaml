@@ -14,6 +14,16 @@ spec:
   system: platform
 ---
 apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: kbxtecho
+  description: Kbxt Echo Service
+spec:
+  type: openapi
+  definition:
+    $text: https://api.dev.kbxt.cloud/public/echo/echo/swagger/v1.0/swagger.json
+---
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: kbxtechogrpc
