@@ -5,6 +5,10 @@ metadata:
   description: Kbxt Echo Service
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=kbxtecho
+  links:
+    - title: "Container Logs"
+      url: https://app.datadoghq.com/logs?query=service%3Akbxtecho
+      icon: ManageSearch
   tags:
     - netcore
 spec:
