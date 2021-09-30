@@ -20,6 +20,7 @@ metadata:
   description: Kbxt Echo Service
 spec:
   type: openapi
+  lifecycle: production
   definition:
     $text: https://api.dev.kbxt.cloud/public/echo/echo/swagger/v1.0/swagger.json
 ---
