@@ -12,6 +12,8 @@ spec:
   lifecycle: production
   owner: user:guest
   system: platform
+  providesApis:
+    - kbxtecho
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
