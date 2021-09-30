@@ -5,11 +5,25 @@ metadata:
   description: Kbxt Echo Service
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/instance=kbxtecho'
-#     backstage.io/kubernetes-id: kbxtecho
   tags:
     - netcore
 spec:
   type: service
   lifecycle: production
   owner: user:guest
-  system: kbxtecho
+  system: platform
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: kbxtechogrpc
+  description: Kbxt Echo Grpc Service
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/instance=kbxtechogrpc'
+  tags:
+    - netcore
+spec:
+  type: service
+  lifecycle: production
+  owner: user:guest
+  system: platform
