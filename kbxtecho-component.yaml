@@ -10,7 +10,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: user:guest
+  owner: team-a
   system: platform
   providesApis:
     - kbxtecho
@@ -23,7 +23,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
-  owner: user:guest
+  owner: team-a
   definition:
     $text: https://api.dev.kbxt.cloud/public/echo/echo/swagger/v1.0/swagger.json
 ---
