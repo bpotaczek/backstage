@@ -23,6 +23,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
+  owner: user:guest
   definition:
     $text: https://api.dev.kbxt.cloud/public/echo/echo/swagger/v1.0/swagger.json
 ---
