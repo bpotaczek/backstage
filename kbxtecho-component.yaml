@@ -4,7 +4,7 @@ metadata:
   name: kbxtecho
   description: Kbxt Echo Service
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/instance=kbxtecho'
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=kbxtecho
   tags:
     - netcore
 spec:
@@ -19,7 +19,7 @@ metadata:
   name: kbxtechogrpc
   description: Kbxt Echo Grpc Service
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/instance=kbxtechogrpc'
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=kbxtechogrpc
   tags:
     - netcore
 spec:
