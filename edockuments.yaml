@@ -79,7 +79,7 @@ spec:
   type: grpc
   lifecycle: production
   owner: edockuments
-  definition: ""
+  definition: "Placeholder text"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -125,7 +125,7 @@ spec:
   type: grpc
   lifecycle: production
   owner: platform
-  definition: ""
+  definition: "Placeholder text"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -159,7 +159,7 @@ spec:
   type: grpc
   lifecycle: production
   owner: platform
-  definition: ""
+  definition: "Placeholder text"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
