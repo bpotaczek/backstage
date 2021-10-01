@@ -58,16 +58,16 @@ spec:
   consumesApis:
     - configurationgrpcapi
   dependsOn: ['resource:shipmentgrpcapi-mongodb']
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: shipmentgrpcapi-mongodb
-  description: shipmentgrpcapi-mongodb
-spec:
-  type: database
-  lifecycle: production
-  owner: platform
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Resource
+# metadata:
+#   name: shipmentgrpcapi-mongodb
+#   description: shipmentgrpcapi-mongodb
+# spec:
+#   type: database
+#   lifecycle: production
+#   owner: platform
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -103,16 +103,16 @@ spec:
   consumesApis:
     - configurationgrpcapi
   dependsOn: ['resource:documentmanagementgrpcapi-mongodb']
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: documentmanagementgrpcapi-mongodb
-  description: documentmanagementgrpcapi-mongodb
-spec:
-  type: database
-  lifecycle: production
-  owner: platform
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Resource
+# metadata:
+#   name: documentmanagementgrpcapi-mongodb
+#   description: documentmanagementgrpcapi-mongodb
+# spec:
+#   type: database
+#   lifecycle: production
+#   owner: platform
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -157,13 +157,13 @@ spec:
   lifecycle: production
   owner: platform
   definition: "Placeholder text"
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: configurationgrpcapi-sql-server
-  description: configurationgrpcapi-sql-server
-spec:
-  type: database
-  lifecycle: production
-  owner: platform
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Resource
+# metadata:
+#   name: configurationgrpcapi-sql-server
+#   description: configurationgrpcapi-sql-server
+# spec:
+#   type: database
+#   lifecycle: production
+#   owner: platform
