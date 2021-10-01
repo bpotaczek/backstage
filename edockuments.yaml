@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: edockumentspublicapi
-  description: Kbxt Echo Service
+  description: edockumentspublicapi
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=edockumentspublicapi
   links:
@@ -26,7 +26,7 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: edockumentspublicapi
-  description: edockumentspublicapi Service
+  description: edockumentspublicapi
 spec:
   type: openapi
   lifecycle: production
@@ -38,7 +38,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: shipmentgrpcapi
-  description: shipmentgrpcapi Service
+  description: shipmentgrpcapi
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=shipmentgrpcapi
   links:
@@ -61,10 +61,20 @@ spec:
     - shipmentgrpcapi-mongodb
 ---
 apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: shipmentgrpcapi-mongodb
+  description: shipmentgrpcapi-mongodb
+spec:
+  type: database
+  lifecycle: production
+  owner: platform
+---
+apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: kbxintegrationsedirouting-api
-  description: kbxintegrationsedirouting-api Service
+  description: kbxintegrationsedirouting-api
 spec:
   type: grpc
   lifecycle: production
@@ -75,7 +85,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: documentmanagementgrpcapi
-  description: documentmanagementgrpcapi Service
+  description: documentmanagementgrpcapi
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=documentmanagementgrpcapi
   links:
@@ -97,10 +107,20 @@ spec:
     - documentmanagementgrpcapi-mongodb
 ---
 apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: documentmanagementgrpcapi-mongodb
+  description: documentmanagementgrpcapi-mongodb
+spec:
+  type: database
+  lifecycle: production
+  owner: platform
+---
+apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: documentmanagementgrpcapi
-  description: documentmanagementgrpcapi Service
+  description: documentmanagementgrpcapi
 spec:
   type: grpc
   lifecycle: production
@@ -111,7 +131,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: configurationgrpcapi
-  description: configurationgrpcapi Service
+  description: configurationgrpcapi
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=configurationgrpcapi
   links:
@@ -134,9 +154,19 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: configurationgrpcapi
-  description: configurationgrpcapi Service
+  description: configurationgrpcapi
 spec:
   type: grpc
   lifecycle: production
   owner: platform
   definition: ""
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: configurationgrpcapi-sql-server
+  description: configurationgrpcapi-sql-server
+spec:
+  type: database
+  lifecycle: production
+  owner: platform
