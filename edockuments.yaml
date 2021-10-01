@@ -1,0 +1,142 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: edockumentspublicapi
+  description: Kbxt Echo Service
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=edockumentspublicapi
+  links:
+    - title: "Container Logs"
+      url: https://app.datadoghq.com/logs?query=service%edockumentspublicapi%20kube_namespace%3Aedockuments
+  tags:
+    - netcore
+spec:
+  type: service
+  lifecycle: production
+  owner: edockuments
+  system: platform
+  providesApis:
+    - edockumentspublicapi
+  consumesApis:
+    - shipmentgrpcapi
+    - documentmanagementgrpcapi
+    - configurationgrpcapi
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: edockumentspublicapi
+  description: edockumentspublicapi Service
+spec:
+  type: openapi
+  lifecycle: production
+  owner: edockuments
+  definition:
+    $text: https://api.dev.kbxt.cloud/public/echo/echo/swagger/v1.0/swagger.json
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: shipmentgrpcapi
+  description: shipmentgrpcapi Service
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=shipmentgrpcapi
+  links:
+    - title: "Container Logs"
+      url: https://app.datadoghq.com/logs?query=service%3Ashipmentgrpcapi%20kube_namespace%3Aedockuments
+  tags:
+    - netcore
+    - grpc
+spec:
+  type: service
+  lifecycle: production
+  owner: edockuments
+  system: platform
+  providesApis:
+    - shipmentgrpcapi
+    - shipmentgrpcapi
+  consumesApis:
+    - configurationgrpcapi
+  dependsOn: 
+    - shipmentgrpcapi-mongodb
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: kbxintegrationsedirouting-api
+  description: kbxintegrationsedirouting-api Service
+spec:
+  type: grpc
+  lifecycle: production
+  owner: edockuments
+  definition: ""
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: documentmanagementgrpcapi
+  description: documentmanagementgrpcapi Service
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=documentmanagementgrpcapi
+  links:
+    - title: "Container Logs"
+      url: https://app.datadoghq.com/logs?query=service%3Adocumentmanagementgrpcapi%20kube_namespace%3Aedockuments
+  tags:
+    - netcore
+    - grpc
+spec:
+  type: service
+  lifecycle: production
+  owner: platform
+  system: platform
+  providesApis:
+    - documentmanagementgrpcapi
+  consumesApis:
+    - configurationgrpcapi
+  dependsOn: 
+    - documentmanagementgrpcapi-mongodb
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: documentmanagementgrpcapi
+  description: documentmanagementgrpcapi Service
+spec:
+  type: grpc
+  lifecycle: production
+  owner: platform
+  definition: ""
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: configurationgrpcapi
+  description: configurationgrpcapi Service
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=configurationgrpcapi
+  links:
+    - title: "Container Logs"
+      url: https://app.datadoghq.com/logs?query=service%3Aconfigurationgrpcapi%20kube_namespace%3Aedockuments
+  tags:
+    - netcore
+    - grpc
+spec:
+  type: service
+  lifecycle: production
+  owner: platform
+  system: platform
+  providesApis:
+    - configurationgrpcapi
+  dependsOn: 
+    - configurationgrpcapi-sql-server
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: configurationgrpcapi
+  description: configurationgrpcapi Service
+spec:
+  type: grpc
+  lifecycle: production
+  owner: platform
+  definition: ""
