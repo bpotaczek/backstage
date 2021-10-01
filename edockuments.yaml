@@ -32,7 +32,7 @@ spec:
   lifecycle: production
   owner: edockuments
   definition:
-    $text: https://api.dev.kbxt.cloud/public/echo/echo/swagger/v1.0/swagger.json
+    $text: https://api.dev.kbxt.cloud/public/edockuments/publicapi/swagger/v1.0/swagger.json
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
