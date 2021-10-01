@@ -14,7 +14,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: team-a
+  owner: echo
   system: platform
   providesApis:
     - kbxtecho
@@ -30,7 +30,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
-  owner: team-a
+  owner: echo
   definition:
     $text: https://api.dev.kbxt.cloud/public/echo/echo/swagger/v1.0/swagger.json
 ---
@@ -43,10 +43,11 @@ metadata:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/instance=kbxtechogrpc
   tags:
     - netcore
+    - grpc
 spec:
   type: service
   lifecycle: production
-  owner: team-a
+  owner: echo
   system: platform
   providesApis:
     - kbxtechogrpc-files
@@ -60,7 +61,7 @@ metadata:
 spec:
   type: grpc
   lifecycle: production
-  owner: team-a
+  owner: echo
   definition: |
     syntax = "proto3";
 
@@ -100,7 +101,7 @@ metadata:
 spec:
   type: grpc
   lifecycle: production
-  owner: team-a
+  owner: echo
   definition: |
     syntax = "proto3";
 
