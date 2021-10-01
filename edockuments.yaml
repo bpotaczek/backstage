@@ -57,8 +57,7 @@ spec:
     - shipmentgrpcapi
   consumesApis:
     - configurationgrpcapi
-  dependsOn: 
-    - shipmentgrpcapi-mongodb
+  dependsOn: ['resource:shipmentgrpcapi-mongodb']
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
@@ -103,8 +102,7 @@ spec:
     - documentmanagementgrpcapi
   consumesApis:
     - configurationgrpcapi
-  dependsOn: 
-    - documentmanagementgrpcapi-mongodb
+  dependsOn: ['resource:documentmanagementgrpcapi-mongodb']
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Resource
@@ -147,8 +145,7 @@ spec:
   system: platform
   providesApis:
     - configurationgrpcapi
-  dependsOn: 
-    - configurationgrpcapi-sql-server
+  dependsOn: ['resource:configurationgrpcapi-sql-server']
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
